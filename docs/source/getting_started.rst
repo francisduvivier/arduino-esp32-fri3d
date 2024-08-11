@@ -147,7 +147,7 @@ Resources
 .. _ESP32 Forum: https://esp32.com
 .. _ESP32 Forum - Arduino: https://esp32.com/viewforum.php?f=19
 .. _ESP32 Forum - Hardware: https://esp32.com/viewforum.php?f=12
-.. _Gitter: https://gitter.im/espressif/arduino-esp32
+.. _Gitter: https://gitter.im/francisduvivier/arduino-esp32-fri3d
 .. _Adafruit (Discord): https://discord.gg/adafruit
 .. _Espressif MCUs (Discord): https://discord.gg/nKxMTnkD
 .. _ESP32 on Reddit: https://www.reddit.com/r/esp32

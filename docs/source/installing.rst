@@ -135,7 +135,7 @@ The following configuration uses the upstream version of the Espressif developme
    board = esp32-c3-devkitm-1
    framework = arduino
    platform_packages =
-       framework-arduinoespressif32 @ https://github.com/espressif/arduino-esp32#master
+       framework-arduinoespressif32 @ https://github.com/francisduvivier/arduino-esp32-fri3d#master
 
 
 To get more information about PlatformIO, see the following links:
@@ -173,7 +173,7 @@ Steps to install Arduino ESP32 support on Windows:
 
 - Select source and destination
    - Sketchbook Directory: Usually ``C:/Users/[YOUR_USER_NAME]/Documents/Arduino`` and is listed underneath the "Sketchbook location" in Arduino preferences.
-   - Source Location: ``https://github.com/espressif/arduino-esp32.git``
+   - Source Location: ``https://github.com/francisduvivier/arduino-esp32-fri3d.git``
    - Target Directory: ``[ARDUINO_SKETCHBOOK_DIR]/hardware/espressif/esp32``
    - Click ``Clone`` to start cloning the repository
 
@@ -262,7 +262,7 @@ Debian/Ubuntu
    sudo pip3 install pyserial && \
    mkdir -p ~/Arduino/hardware/espressif && \
    cd ~/Arduino/hardware/espressif && \
-   git clone https://github.com/espressif/arduino-esp32.git esp32 && \
+   git clone https://github.com/francisduvivier/arduino-esp32-fri3d.git esp32 && \
    cd esp32/tools && \
    python3 get.py
 
@@ -275,7 +275,7 @@ Debian/Ubuntu
    cd ~/Arduino/hardware
    mkdir -p espressif && \
    cd espressif && \
-   git clone https://github.com/espressif/arduino-esp32.git esp32 && \
+   git clone https://github.com/francisduvivier/arduino-esp32-fri3d.git esp32 && \
    cd esp32/tools && \
    python3 get.py
 
@@ -295,7 +295,7 @@ Fedora
    sudo dnf install git python3-pip python3-pyserial && \
    mkdir -p ~/Arduino/hardware/espressif && \
    cd ~/Arduino/hardware/espressif && \
-   git clone https://github.com/espressif/arduino-esp32.git esp32 && \
+   git clone https://github.com/francisduvivier/arduino-esp32-fri3d.git esp32 && \
    cd esp32/tools && \
    python get.py
 
@@ -318,7 +318,7 @@ openSUSE
    fi && \
    mkdir -p ~/Arduino/hardware/espressif && \
    cd ~/Arduino/hardware/espressif && \
-   git clone https://github.com/espressif/arduino-esp32.git esp32 && \
+   git clone https://github.com/francisduvivier/arduino-esp32-fri3d.git esp32 && \
    cd esp32/tools && \
    python get.py
 
@@ -335,7 +335,7 @@ macOS
 
    mkdir -p ~/Documents/Arduino/hardware/espressif && \
    cd ~/Documents/Arduino/hardware/espressif && \
-   git clone https://github.com/espressif/arduino-esp32.git esp32 && \
+   git clone https://github.com/francisduvivier/arduino-esp32-fri3d.git esp32 && \
    cd esp32/tools && \
    python get.py 
 

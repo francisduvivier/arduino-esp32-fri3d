@@ -3,7 +3,7 @@
 ![Build Status](https://github.com/francisduvivier/arduino-esp32-fri3d/workflows/ESP32%20Arduino%20CI/badge.svg) [![Documentation Status](https://readthedocs.com/projects/espressif-arduino-esp32/badge/?version=latest)](https://docs.espressif.com/projects/arduino-esp32-fri3d/en/latest/?badge=latest)
 [![External Libraries Test](https://github.com/francisduvivier/arduino-esp32-fri3d/actions/workflows/lib.yml/badge.svg?branch=master&event=schedule)](https://github.com/francisduvivier/arduino-esp32-fri3d/actions/workflows/lib.yml?link=http://https://github.com/francisduvivier/arduino-esp32-fri3d/blob/master/LIBRARIES_TEST.md)
 
-### Need help or have a question? Join the chat at [Gitter](https://gitter.im/espressif/arduino-esp32) or [open a new Discussion](https://github.com/francisduvivier/arduino-esp32-fri3d/discussions)
+### Need help or have a question? Join the chat at [Gitter](https://gitter.im/francisduvivier/arduino-esp32-fri3d) or [open a new Discussion](https://github.com/francisduvivier/arduino-esp32-fri3d/discussions)
 
 ## Contents
 
@@ -17,9 +17,9 @@
 
 ### Development Status
 
-Latest Stable Release  [![Release Version](https://img.shields.io/github/release/espressif/arduino-esp32.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/latest/) [![Release Date](https://img.shields.io/github/release-date/espressif/arduino-esp32.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/latest/) [![Downloads](https://img.shields.io/github/downloads/francisduvivier/arduino-esp32-fri3d/latest/total.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/latest/)
+Latest Stable Release  [![Release Version](https://img.shields.io/github/release/francisduvivier/arduino-esp32-fri3d.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/latest/) [![Release Date](https://img.shields.io/github/release-date/francisduvivier/arduino-esp32-fri3d.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/latest/) [![Downloads](https://img.shields.io/github/downloads/francisduvivier/arduino-esp32-fri3d/latest/total.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/latest/)
 
-Latest Development Release  [![Release Version](https://img.shields.io/github/release/francisduvivier/arduino-esp32-fri3d/all.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/) [![Release Date](https://img.shields.io/github/release-date-pre/espressif/arduino-esp32.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/) [![Downloads](https://img.shields.io/github/downloads-prefrancisduvivier/arduino-esp32-fri3d/latest/total.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/)
+Latest Development Release  [![Release Version](https://img.shields.io/github/release/francisduvivier/arduino-esp32-fri3d/all.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/) [![Release Date](https://img.shields.io/github/release-date-pre/francisduvivier/arduino-esp32-fri3d.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/) [![Downloads](https://img.shields.io/github/downloads-prefrancisduvivier/arduino-esp32-fri3d/latest/total.svg?style=plastic)](https://github.com/francisduvivier/arduino-esp32-fri3d/releases/)
 
 ### Development Planning
 

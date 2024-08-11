@@ -21,7 +21,7 @@ jobs:
   compile-sketch:
     if: |
       contains(github.event.pull_request.labels.*.name, 'lib_test') ||
-      (github.event_name == 'schedule' && github.repository == 'espressif/arduino-esp32')
+      (github.event_name == 'schedule' && github.repository == 'francisduvivier/arduino-esp32-fri3d')
     runs-on: ubuntu-latest
 
     env:

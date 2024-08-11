@@ -3,7 +3,7 @@
     {
       "name": "Fri3d badge (esp32 fork)",
       "maintainer": "Espressif Systems",
-      "websiteURL": "https://github.com/espressif/arduino-esp32",
+      "websiteURL": "https://github.com/francisduvivier/arduino-esp32-fri3d",
       "email": "hristo@espressif.com",
       "help": {
         "online": "http://esp32.com"
