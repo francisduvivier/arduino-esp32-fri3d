@@ -35,17 +35,42 @@ static const uint8_t MOSI  = 6;
 static const uint8_t MISO  = 8;
 static const uint8_t SCK   = 7;
 
-#define BOARD_HAS_SPI_LCD
-#define LCD_MODEL  ST7789
-#define LCD_WIDTH	240
-#define LCD_HEIGHT	296
-#define LCD_MISO    MISO
-#define LCD_DC      4 // Used to switch data and command status.
-#define LCD_CS      5 // used to enable LCD, low level to enable.
-#define LCD_CLK     SCK // LCD SPI Clock.
-#define LCD_MOSI    MOSI // LCD SPI MOSI.
-#define LCD_RST     48 // used to reset LCD, low level to reset.
+// Fri3d Badge 2024 LCD
+#define X_BOARD_HAS_SPI_LCD
+#define X_LCD_MODEL   ST7789
+#define X_LCD_WIDTH	  240
+#define X_LCD_HEIGHT  296
+#define X_LCD_MISO    MISO
+#define X_LCD_DC      4
+#define X_LCD_CS      5
+#define X_LCD_CLK     SCK // SCLK
+#define X_LCD_MOSI    MOSI
+#define X_LCD_RST     48 // used to reset LCD, low level to reset.
 
+// Fri3d Badge 2024 WS2812
+#define X_WS2812_LED 12
+#define X_BATTERY_MONITOR 13
+#define X_BLASTER 10
+#define X_BUZZER 46
+#define X_IR_RECEIVER 11
+
+// Fri3d Badge 2024 Buttons
+#define X_BUTTON_A 39
+#define X_BUTTON_B 40
+#define X_BUTTON_X 38
+#define X_BUTTON_Y 41
+#define X_BUTTON_MENU 45
+#define X_BUTTON_START 0
+
+// Fri3d Badge 2024 Joystick
+#define X_JOYSTICK_VERTICAL 3
+#define X_JOYSTICK_HORIZONTAL 1
+
+// Fri3d Badge 2024 Aux Pwr
+#define X_AUX_PWR 42
+
+// Fri3d Badge 2024 Accelero Gyro
+#define X_ACCELERO_GYRO 21
 
 static const uint8_t A0 = 1;
 static const uint8_t A1 = 2;
