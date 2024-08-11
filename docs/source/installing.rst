@@ -25,11 +25,11 @@ This is the way to install Arduino-ESP32 directly from the Arduino IDE.
 
 - Stable release link::
 
-   https://francisduvivier.github.io/arduino-esp32-fri3d/package_esp32_index.json
+   https://francisduvivier.github.io/arduino-esp32-fri3d/package_fri3d_index.json
 
 - Development release link::
 
-   https://francisduvivier.github.io/arduino-esp32-fri3d/package_esp32_dev_index.json
+   https://francisduvivier.github.io/arduino-esp32-fri3d/package_fri3d_dev_index.json
 
 
 .. note::

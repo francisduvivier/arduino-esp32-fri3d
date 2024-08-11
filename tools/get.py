@@ -215,7 +215,7 @@ def identify_platform():
 if __name__ == '__main__':
     identified_platform = identify_platform()
     print('Platform: {0}'.format(identified_platform))
-    tools_to_download = load_tools_list(current_dir + '/../package/package_esp32_index.template.json', identified_platform)
+    tools_to_download = load_tools_list(current_dir + '/../package/package_fri3d_index.template.json', identified_platform)
     mkdir_p(dist_dir)
     for tool in tools_to_download:
         get_tool(tool)

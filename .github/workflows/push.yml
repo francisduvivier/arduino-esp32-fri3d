@@ -41,7 +41,7 @@ jobs:
         path: |
           ./tools/dist
           ~/arduino_ide
-        key: ${{ runner.os }}-${{ hashFiles('package/package_esp32_index.template.json',
+        key: ${{ runner.os }}-${{ hashFiles('package/package_fri3d_index.template.json',
                                             'tools/get.py',
                                             '.github/scripts/install-arduino-ide.sh') }}
     - name: Build Sketches
