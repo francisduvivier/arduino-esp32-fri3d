@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "Fri3d badge (esp32 fork)",
+      "name": "Fri3dBadge",
       "maintainer": "Espressif Systems",
       "websiteURL": "https://github.com/francisduvivier/arduino-esp32-fri3d",
       "email": "hristo@espressif.com",
@@ -10,7 +10,7 @@
       },
       "platforms": [
         {
-          "name": "Fri3d badge (esp32 fork)",
+          "name": "Fri3dBadge",
           "architecture": "esp32",
           "version": "",
           "category": "ESP32",
