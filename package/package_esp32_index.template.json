@@ -23,19 +23,7 @@
           },
           "boards": [
             {
-              "name": "ESP32 Dev Board"
-            },
-            {
-              "name": "ESP32-S2 Dev Board"
-            },
-            {
-              "name": "ESP32-S3 Dev Board"
-            },
-            {
-              "name": "ESP32-C3 Dev Board"
-            },
-            {
-              "name": "Arduino Nano ESP32"
+              "name": "Fri3d Badge 2024 (ESP32-S3-WROOM-1)"
             }
           ],
           "toolsDependencies": [
