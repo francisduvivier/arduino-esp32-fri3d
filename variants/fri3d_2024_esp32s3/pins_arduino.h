@@ -38,7 +38,7 @@ static const uint8_t SCK   = 7;
 #define BOARD_HAS_SPI_LCD
 #define LCD_MODEL  ST7789
 #define LCD_WIDTH	240
-#define LCD_HEIGHT	294
+#define LCD_HEIGHT	296
 #define LCD_MISO    MISO
 #define LCD_DC      4 // Used to switch data and command status.
 #define LCD_CS      5 // used to enable LCD, low level to enable.
