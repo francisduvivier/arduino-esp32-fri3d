@@ -238,4 +238,4 @@ Note that WROOM-2 has always OPI.
 Further Help
 ------------
 
-If you encounter any other issues or need further assistance, please consult the `ESP32 Arduino Core <https://github.com/espressif/arduino-esp32>`_ documentation or seek help from the `ESP32 community forums <https://esp32.com>`_.
+If you encounter any other issues or need further assistance, please consult the `ESP32 Arduino Core <https://github.com/francisduvivier/arduino-esp32-fri3d>`_ documentation or seek help from the `ESP32 community forums <https://esp32.com>`_.

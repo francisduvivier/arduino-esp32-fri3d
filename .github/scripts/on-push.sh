@@ -40,7 +40,7 @@ function build(){
 
 if [ -z "$GITHUB_WORKSPACE" ]; then
     export GITHUB_WORKSPACE="$PWD"
-    export GITHUB_REPOSITORY="espressif/arduino-esp32"
+    export GITHUB_REPOSITORY="francisduvivier/arduino-esp32-fri3d"
 fi
 
 CHUNK_INDEX=$1

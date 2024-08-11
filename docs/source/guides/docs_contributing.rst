@@ -328,7 +328,7 @@ Additional Guidelines
 
 If you want to contribute with code on the Arduino ESP32 core, be sure to follow the `ESP-IDF Documenting Code <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/contribute/documenting-code.html>`_ as a reference.
 
-.. _Arduino-ESP32: https://github.com/espressif/arduino-esp32
+.. _Arduino-ESP32: https://github.com/francisduvivier/arduino-esp32-fri3d
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _ReadTheDocs: https://readthedocs.org/
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
