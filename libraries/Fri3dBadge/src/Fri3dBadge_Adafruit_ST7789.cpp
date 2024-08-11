@@ -1,13 +1,12 @@
 #include <Fri3dBadge_Adafruit_ST7789.h>
 
-Fri3dBadge_Adafruit_ST7789::Fri3dBadge_Adafruit_ST7789() : Adafruit_ST7789(X_LCD_CS, X_LCD_DC, X_LCD_MOSI, X_LCD_CLK, X_LCD_RST);
+Fri3dBadge_Adafruit_ST7789::Fri3dBadge_Adafruit_ST7789() : Adafruit_ST7789(X_LCD_CS, X_LCD_DC, X_LCD_MOSI, X_LCD_CLK, X_LCD_RST)
 {
 
 }
 
-void Fri3dBadge_Adafruit_ST7789::begin(uint32_t freq)
+void Fri3dBadge_Adafruit_ST7789::init()
 {
     // Call the parent class's begin method to initialize the display
-    Adafruit_ST7789::begin(freq);
-    setRotation(1);
+    Adafruit_ST7789::init(X_LCD_WIDTH, X_LCD_HEIGHT);
 }
