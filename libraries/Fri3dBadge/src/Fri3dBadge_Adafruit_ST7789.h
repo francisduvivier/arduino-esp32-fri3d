@@ -12,7 +12,7 @@
 #define BADGE2020_ACC_ADDRESS    0x18
 #define BADGE2020_ACC_CTRL_REG5  0x25
 
-class Fri3dBadge_TFT : public Adafruit_ST7789 {
+class Fri3dBadge_Adafruit_ST7789 : public Adafruit_ST7789 {
 public:
 	Fri3dBadge_TFT();
 private:
