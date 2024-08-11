@@ -26515,9 +26515,9 @@ fri3d_2024_esp32s3.menu.PSRAM.disabled.build.psram_type=qspi
 fri3d_2024_esp32s3.menu.PSRAM.enabled=QSPI PSRAM
 fri3d_2024_esp32s3.menu.PSRAM.enabled.build.defines=-DBOARD_HAS_PSRAM
 fri3d_2024_esp32s3.menu.PSRAM.enabled.build.psram_type=qspi
-fri3d_2024_esp32s3.menu.PSRAM.opi=OPI PSRAM
-fri3d_2024_esp32s3.menu.PSRAM.opi.build.defines=-DBOARD_HAS_PSRAM
-fri3d_2024_esp32s3.menu.PSRAM.opi.build.psram_type=opi
+fri3d_2024_esp32s3.menu.PSRAM.default=OPI PSRAM
+fri3d_2024_esp32s3.menu.PSRAM.default.build.defines=-DBOARD_HAS_PSRAM
+fri3d_2024_esp32s3.menu.PSRAM.default.build.psram_type=opi
 
 fri3d_2024_esp32s3.menu.FlashMode.qio=QIO 80MHz
 fri3d_2024_esp32s3.menu.FlashMode.qio.build.flash_mode=dio
