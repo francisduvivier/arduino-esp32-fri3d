@@ -58,7 +58,7 @@ Currently, this example supports the following targets.
 Change the SSID and password in the example to your WiFi and flash the example.
 Open a serial terminal and the example will write the exact addresses with used IP addresses you can use to test the servers.
 
-* How to install the Arduino IDE: [Install Arduino IDE](https://github.com/espressif/arduino-esp32/tree/master/docs/arduino-ide).
+* How to install the Arduino IDE: [Install Arduino IDE](https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/docs/arduino-ide).
 
 #### Using Arduino IDE
 
@@ -103,7 +103,7 @@ HTTP server2 started
 
 ## Contribute
 
-To know how to contribute to this project, see [How to contribute.](https://github.com/espressif/arduino-esp32/blob/master/CONTRIBUTING.rst)
+To know how to contribute to this project, see [How to contribute.](https://github.com/francisduvivier/arduino-esp32-fri3d/blob/master/CONTRIBUTING.rst)
 
 If you have any **feedback** or **issue** to report on this example/library, please open an issue or fix it by creating a new PR. Contributions are more than welcome!
 

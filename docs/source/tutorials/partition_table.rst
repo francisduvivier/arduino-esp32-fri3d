@@ -7,7 +7,7 @@ Introduction
 
 Partition table is used to define the flash memory organization and the different kind of data will be stored on each partition.
 
-You can use one of the available partition table scheme or create your own. You can see all the different schemes on the `tools/partitions <https://github.com/espressif/arduino-esp32/tree/master/tools/partitions>`_ folder or by the Arduino IDE tools menu `Tools -> Partition Scheme`.
+You can use one of the available partition table scheme or create your own. You can see all the different schemes on the `tools/partitions <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/tools/partitions>`_ folder or by the Arduino IDE tools menu `Tools -> Partition Scheme`.
 
 The partition table is created by a .CSV (Comma-separeted Values) file with the following structure:
 
@@ -102,7 +102,7 @@ Where:
     The last column in the CSV file is the flags and it is currently used to define if the partition will be encrypted by the flash encryption feature.
 
 
-For example, **the most common partition** is the ``default_8MB.csv`` (see `tools/partitions <https://github.com/espressif/arduino-esp32/tree/master/tools/partitions>`_ folder for some examples):
+For example, **the most common partition** is the ``default_8MB.csv`` (see `tools/partitions <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/tools/partitions>`_ folder for some examples):
 
 .. code-block::
 
@@ -131,9 +131,9 @@ Here is an example you can use for a custom partition table:
 
 This partition will use about 12MB of the 16MB flash. The offset will be automatically calculated after the first application partition and the units are in K and M.
 
-An alternative is to create the new partition table as a new file in the `tools/partitions <https://github.com/espressif/arduino-esp32/tree/master/tools/partitions>`_ folder and edit the `boards.txt <https://github.com/espressif/arduino-esp32/tree/master/boards.txt>`_ file to add your custom partition table.
+An alternative is to create the new partition table as a new file in the `tools/partitions <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/tools/partitions>`_ folder and edit the `boards.txt <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/boards.txt>`_ file to add your custom partition table.
 
-Another alternative is to create the new partition table as a new file, and place it in the `variants <https://github.com/espressif/arduino-esp32/tree/master/variants>`_ folder under your boards folder, and edit the `boards.txt <https://github.com/espressif/arduino-esp32/tree/master/boards.txt>`_ file to add your custom partition table, noting that in order for the compiler to find your custom partition table file you must use the '.build.custom_partitions=' option in the boards.txt file, rather than the standard '.build.partitions=' option. The '.build.variant=' option has the name of the folder holding your custom partition table in the variants folder.
+Another alternative is to create the new partition table as a new file, and place it in the `variants <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/variants>`_ folder under your boards folder, and edit the `boards.txt <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/boards.txt>`_ file to add your custom partition table, noting that in order for the compiler to find your custom partition table file you must use the '.build.custom_partitions=' option in the boards.txt file, rather than the standard '.build.partitions=' option. The '.build.variant=' option has the name of the folder holding your custom partition table in the variants folder.
 
 An example of the PartitionScheme listing using the ESP32S3 Dev Module as a reference, would be to have the following:
 

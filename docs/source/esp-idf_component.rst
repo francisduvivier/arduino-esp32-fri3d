@@ -4,7 +4,7 @@ Arduino as an ESP-IDF component
 
 This method is recommended for advanced users. To use this method, you will need to have the ESP-IDF toolchain installed.
 
-For a simplified method, see `Installing using Boards Manager <https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#installing-using-boards-manager>`_.
+For a simplified method, see `Installing using Boards Manager <https://docs.espressif.com/projects/arduino-esp32-fri3d/en/latest/installing.html#installing-using-boards-manager>`_.
 
 ESP32 Arduino lib-builder
 -------------------------
@@ -162,4 +162,4 @@ The Arduino component requires the FreeRTOS tick rate `CONFIG_FREERTOS_HZ` set t
 Compilation Errors
 ------------------
 
-As commits are made to esp-idf and submodules, the codebases can develop incompatibilities that cause compilation errors.  If you have problems compiling, follow the instructions in `Issue #1142 <https://github.com/espressif/arduino-esp32/issues/1142>`_ to roll esp-idf back to a different version.
+As commits are made to esp-idf and submodules, the codebases can develop incompatibilities that cause compilation errors.  If you have problems compiling, follow the instructions in `Issue #1142 <https://github.com/francisduvivier/arduino-esp32-fri3d/issues/1142>`_ to roll esp-idf back to a different version.

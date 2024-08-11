@@ -139,4 +139,4 @@ A usage example for the touch interrupts.
 .. literalinclude:: ../../../libraries/ESP32/examples/Touch/TouchInterrupt/TouchInterrupt.ino
     :language: arduino
 
-More examples can be found in our repository -> `Touch examples <https://github.com/espressif/arduino-esp32/tree/master/libraries/ESP32/examples/Touch>`_. 
+More examples can be found in our repository -> `Touch examples <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/libraries/ESP32/examples/Touch>`_.

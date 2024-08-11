@@ -414,7 +414,7 @@ void VFSFileImpl::flush()
         return;
     }
     fflush(_f);
-    // workaround for https://github.com/espressif/arduino-esp32/issues/1293
+    // workaround for https://github.com/francisduvivier/arduino-esp32-fri3d/issues/1293
     fsync(fileno(_f));
 }
 

@@ -253,4 +253,4 @@ The USB Device Firmware Upgrade is a class used for flashing the device through 
 This option can be used to ``Enable`` or ``Disable`` this function at the boot. If this option is ``Enabled``, once the device is connected via USB, the device will appear as a USB DFU capable device.
 
 .. _Espressif Product Selector: https://products.espressif.com/
-.. _boards.txt: https://github.com/espressif/arduino-esp32/blob/master/boards.txt
+.. _boards.txt: https://github.com/francisduvivier/arduino-esp32-fri3d/blob/master/boards.txt

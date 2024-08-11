@@ -10,7 +10,7 @@ This example is compatible with the ESP32-WROOM-DA.
 
 ## How to Use Example
 
-* How to install the Arduino IDE: [Install Arduino IDE](https://github.com/espressif/arduino-esp32/tree/master/docs/arduino-ide).
+* How to install the Arduino IDE: [Install Arduino IDE](https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/docs/arduino-ide).
 
 #### Using Arduino IDE
 
@@ -57,7 +57,7 @@ If the error persists, you can ask for help at the official [ESP32 forum](https:
 
 ## Contribute
 
-To know how to contribute to this project, see [How to contribute.](https://github.com/espressif/arduino-esp32/blob/master/CONTRIBUTING.rst)
+To know how to contribute to this project, see [How to contribute.](https://github.com/francisduvivier/arduino-esp32-fri3d/blob/master/CONTRIBUTING.rst)
 
 If you have any **feedback** or **issue** to report on this example/library, please open an issue or fix it by creating a new PR. Contributions are more than welcome!
 

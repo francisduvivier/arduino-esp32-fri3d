@@ -13,7 +13,7 @@
  *    D1       4
  *
  *    For more info see file README.md in this library or on URL:
- *    https://github.com/espressif/arduino-esp32/tree/master/libraries/SD_MMC
+ *    https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/libraries/SD_MMC
  */
 
 #include "FS.h"

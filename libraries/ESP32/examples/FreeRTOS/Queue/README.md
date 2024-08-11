@@ -20,7 +20,7 @@ This example supports all ESP32 SoCs.
 
 Flash and write anything to serial input.
 
-* How to install the Arduino IDE: [Install Arduino IDE](https://github.com/espressif/arduino-esp32/tree/master/docs/arduino-ide).
+* How to install the Arduino IDE: [Install Arduino IDE](https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/docs/arduino-ide).
 
 #### Using Arduino IDE
 
@@ -58,7 +58,7 @@ Echo line of size 24: "haracters will be split."
 
 ## Contribute
 
-To know how to contribute to this project, see [How to contribute.](https://github.com/espressif/arduino-esp32/blob/master/CONTRIBUTING.rst)
+To know how to contribute to this project, see [How to contribute.](https://github.com/francisduvivier/arduino-esp32-fri3d/blob/master/CONTRIBUTING.rst)
 
 If you have any **feedback** or **issue** to report on this example/library, please open an issue or fix it by creating a new PR. Contributions are more than welcome!
 

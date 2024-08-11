@@ -79,7 +79,7 @@ README file
 
 The **README.md** file should contain the example details.
 
-Please see the recommended **README.md** file in the `example template folder <https://github.com/espressif/arduino-esp32/tree/master/libraries/ESP32/examples/Template/ExampleTemplate>`_.
+Please see the recommended **README.md** file in the `example template folder <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/libraries/ESP32/examples/Template/ExampleTemplate>`_.
 
 Inline Comments
 ***************
@@ -90,7 +90,7 @@ Brief and clear inline comments are really helpful for the example understanding
 
 **Example**
 
-See the `FTM example <https://github.com/espressif/arduino-esp32/blob/master/libraries/WiFi/examples/FTM/FTM_Initiator/FTM_Initiator.ino>`_ as a reference.
+See the `FTM example <https://github.com/francisduvivier/arduino-esp32-fri3d/blob/master/libraries/WiFi/examples/FTM/FTM_Initiator/FTM_Initiator.ino>`_ as a reference.
 
 .. code-block:: arduino
 
@@ -128,7 +128,7 @@ and
 Example Template
 ****************
 
-The example template can be found `here <https://github.com/espressif/arduino-esp32/tree/master/libraries/ESP32/examples/Template/ExampleTemplate>`_ and can be used as a reference.
+The example template can be found `here <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/libraries/ESP32/examples/Template/ExampleTemplate>`_ and can be used as a reference.
 
 Legal Part
 ----------

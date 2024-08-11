@@ -108,9 +108,9 @@ Before opening a new issue, please read this:
 Be sure to search for a similar reported issue. This avoids duplicating or creating noise in the GitHub Issues reporting.
 We also have the troubleshooting guide to save your time on the most common issues reported by users.
 
-For more details about creating new Issue, see the `Issue Template <https://github.com/espressif/arduino-esp32/blob/master/.github/ISSUE_TEMPLATE/Issue-report.yml>`_.
+For more details about creating new Issue, see the `Issue Template <https://github.com/francisduvivier/arduino-esp32-fri3d/blob/master/.github/ISSUE_TEMPLATE/Issue-report.yml>`_.
 
-If you have any new idea, see the `Feature request Template <https://github.com/espressif/arduino-esp32/blob/master/.github/ISSUE_TEMPLATE/Feature-request.yml>`_.
+If you have any new idea, see the `Feature request Template <https://github.com/francisduvivier/arduino-esp32-fri3d/blob/master/.github/ISSUE_TEMPLATE/Feature-request.yml>`_.
 
 First Steps
 -----------
@@ -131,7 +131,7 @@ Examples
 After installing the toolchain into your environment, you will be able to see all the dedicated examples for the ESP32. These examples are located
 in the examples menu or inside each library folder.
 
-    https://github.com/espressif/arduino-esp32/tree/master/libraries
+    https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/libraries
 
 There is also a `list of examples <https://techtutorialsx.com/category/esp32/>`_ managed outside of Espressif, so check them out.
 

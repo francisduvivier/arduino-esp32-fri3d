@@ -46,7 +46,7 @@ else
 fi
 
 # Updated as of Nov 3rd 2020
-ARDUINO_IDE_URL="https://github.com/espressif/arduino-esp32/releases/download/1.0.4/arduino-nightly-"
+ARDUINO_IDE_URL="https://github.com/francisduvivier/arduino-esp32-fri3d/releases/download/1.0.4/arduino-nightly-"
 
 # Currently not working
 #ARDUINO_IDE_URL="https://www.arduino.cc/download.php?f=/arduino-nightly-"

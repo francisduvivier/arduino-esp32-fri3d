@@ -24,4 +24,4 @@ BLE UART
 .. literalinclude:: ../../../libraries/BLE/examples/BLE_uart/BLE_uart.ino
     :language: arduino
 
-Complete list of `BLE examples <https://github.com/espressif/arduino-esp32/tree/master/libraries/BLE/examples>`_. 
+Complete list of `BLE examples <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/libraries/BLE/examples>`_.

@@ -61,7 +61,7 @@ typedef struct {
         .usb_attributes = TUSB_DESC_CONFIG_ATT_SELF_POWERED,            \
         .usb_power_ma = 500,                                            \
         .webusb_enabled = false,                                        \
-        .webusb_url = "espressif.github.io/arduino-esp32/webusb.html"   \
+        .webusb_url = "francisduvivier.github.io/arduino-esp32-fri3d/webusb.html"   \
 }
 
 esp_err_t tinyusb_init(tinyusb_device_config_t *config);

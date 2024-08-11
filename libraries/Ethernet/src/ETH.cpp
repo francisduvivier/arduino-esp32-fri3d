@@ -400,7 +400,7 @@ bool ETHClass::begin(uint8_t phy_addr, int power, int mdc, int mdio, eth_phy_typ
     }
 #endif
     // holds a few milliseconds to let DHCP start and enter into a good state
-    // FIX ME -- adresses issue https://github.com/espressif/arduino-esp32/issues/5733
+    // FIX ME -- adresses issue https://github.com/francisduvivier/arduino-esp32-fri3d/issues/5733
     delay(50);
 
     return true;

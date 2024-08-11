@@ -24,4 +24,4 @@ BT Classic Device Discovery
 .. literalinclude:: ../../../libraries/BluetoothSerial/examples/bt_classic_device_discovery/bt_classic_device_discovery.ino
     :language: arduino
 
-Complete list of `Bluetooth examples <https://github.com/espressif/arduino-esp32/tree/master/libraries/BluetoothSerial/examples>`_. 
+Complete list of `Bluetooth examples <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/libraries/BluetoothSerial/examples>`_.

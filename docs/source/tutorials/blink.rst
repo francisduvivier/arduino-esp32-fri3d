@@ -109,5 +109,5 @@ Resources
 
 .. _ESP32 Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
 .. _Wokwi: https://wokwi.com/
-.. _PlatformIO: https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#platformio
-.. _Arduino IDE: https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#installing-using-boards-manager
+.. _PlatformIO: https://docs.espressif.com/projects/arduino-esp32-fri3d/en/latest/installing.html#platformio
+.. _Arduino IDE: https://docs.espressif.com/projects/arduino-esp32-fri3d/en/latest/installing.html#installing-using-boards-manager

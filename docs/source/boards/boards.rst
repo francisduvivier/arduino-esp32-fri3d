@@ -78,7 +78,7 @@ Add here the third party boards, listed by vendors.
 
 .. note::
     All the information must be provided by the vendor. If your favorite board is not here, consider
-    creating an `issue on GitHub <https://github.com/espressif/arduino-esp32/issues>`_ and directly
+    creating an `issue on GitHub <https://github.com/francisduvivier/arduino-esp32-fri3d/issues>`_ and directly
     link/mention the vendor in the issue description.
 
 LOLIN

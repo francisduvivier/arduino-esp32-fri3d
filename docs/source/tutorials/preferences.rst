@@ -705,6 +705,6 @@ If you have any **feedback** or **issue** to report on this tutorial, please ope
 
 Before creating a new issue, be sure to try the Troubleshooting and to check if the same issue was already created by someone else.
 
-.. _How to Contribute: https://github.com/espressif/arduino-esp32/blob/master/CONTRIBUTING.rst
+.. _How to Contribute: https://github.com/francisduvivier/arduino-esp32-fri3d/blob/master/CONTRIBUTING.rst
 
 .. ---- EOF ----
