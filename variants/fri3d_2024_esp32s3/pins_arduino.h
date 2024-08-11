@@ -35,6 +35,18 @@ static const uint8_t MOSI  = 6;
 static const uint8_t MISO  = 8;
 static const uint8_t SCK   = 7;
 
+#define BOARD_HAS_SPI_LCD
+#define LCD_MODEL  ST7789
+#define LCD_WIDTH	240
+#define LCD_HEIGHT	294
+#define LCD_MISO    MISO
+#define LCD_DC      4 // Used to switch data and command status.
+#define LCD_CS      5 // used to enable LCD, low level to enable.
+#define LCD_CLK     SCK // LCD SPI Clock.
+#define LCD_MOSI    MOSI // LCD SPI MOSI.
+#define LCD_RST     48 // used to reset LCD, low level to reset.
+
+
 static const uint8_t A0 = 1;
 static const uint8_t A1 = 2;
 static const uint8_t A2 = 3;
