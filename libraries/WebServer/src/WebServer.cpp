@@ -317,7 +317,7 @@ void WebServer::handleClient() {
           _contentLength = CONTENT_LENGTH_NOT_SET;
           _handleRequest();
 
-// Fix for issue with Chrome based browsers: https://github.com/espressif/arduino-esp32/issues/3652
+// Fix for issue with Chrome based browsers: https://github.com/francisduvivier/arduino-esp32-fri3d/issues/3652
 //           if (_currentClient.connected()) {
 //             _currentStatus = HC_WAIT_CLOSE;
 //             _statusChange = millis();

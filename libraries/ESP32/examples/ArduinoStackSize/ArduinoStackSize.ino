@@ -1,6 +1,6 @@
 /*
     ESP32 Arduino creates a task to run setup() and then to execute loop() continuously
-    This task can be found at https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/main.cpp
+    This task can be found at https://github.com/francisduvivier/arduino-esp32-fri3d/blob/master/cores/esp32/main.cpp
 
     By default "loopTask" will be created with a stack size of 8KB.
     This should be plenty for most general sketches.

@@ -1,6 +1,6 @@
 /*
 Please read README.md file in this folder, or on the web:
-https://github.com/espressif/arduino-esp32/tree/master/libraries/WiFiProv/examples/WiFiProv
+https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/libraries/WiFiProv/examples/WiFiProv
 
 Note: This sketch takes up a lot of space for the app and may not be able to flash with default setting on some chips.
   If you see Error like this: "Sketch too big"

@@ -5,9 +5,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        * Before reporting a new issue please check and search in [List of existing issues](https://github.com/espressif/arduino-esp32/issues?q=is%3Aissue) 
-        * Please check [Online Documentation](https://docs.espressif.com/projects/arduino-esp32/en/latest/index.html)
-        * Take a look on [Troubleshooting guide](https://docs.espressif.com/projects/arduino-esp32/en/latest/troubleshooting.html)
+        * Before reporting a new issue please check and search in [List of existing issues](https://github.com/francisduvivier/arduino-esp32-fri3d/issues?q=is%3Aissue) 
+        * Please check [Online Documentation](https://docs.espressif.com/projects/arduino-esp32-fri3d/en/latest/index.html)
+        * Take a look on [Troubleshooting guide](https://docs.espressif.com/projects/arduino-esp32-fri3d/en/latest/troubleshooting.html)
         * If still experiencing the issue, please provide as many details as possible below about your hardware, computer setup and code.
   - type: input
     id: Board

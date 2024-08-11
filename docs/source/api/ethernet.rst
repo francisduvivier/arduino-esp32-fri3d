@@ -24,4 +24,4 @@ TLK110
 .. literalinclude:: ../../../libraries/Ethernet/examples/ETH_TLK110/ETH_TLK110.ino
     :language: arduino
 
-Complete list of `Ethernet examples <https://github.com/espressif/arduino-esp32/tree/master/libraries/Ethernet/examples>`_. 
+Complete list of `Ethernet examples <https://github.com/francisduvivier/arduino-esp32-fri3d/tree/master/libraries/Ethernet/examples>`_.

@@ -107,7 +107,7 @@ void uartDetachPins(uint8_t uart_num, int8_t rxPin, int8_t txPin, int8_t ctsPin,
     }
 }
 
-// solves issue https://github.com/espressif/arduino-esp32/issues/6032
+// solves issue https://github.com/francisduvivier/arduino-esp32-fri3d/issues/6032
 // baudrate must be multiplied when CPU Frequency is lower than APB 80MHz
 uint32_t _get_effective_baudrate(uint32_t baudrate) 
 {

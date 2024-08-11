@@ -173,7 +173,7 @@ API Functions
 To add a new function description, you must know that the users only have access to the public functions.
 
 
-Here is an example of how to add the function description from `I2C API <https://docs.espressif.com/projects/arduino-esp32/en/latest/api/i2c.html>`_:
+Here is an example of how to add the function description from `I2C API <https://docs.espressif.com/projects/arduino-esp32-fri3d/en/latest/api/i2c.html>`_:
 
 .. code-block::
 
@@ -321,7 +321,7 @@ Be sure the file size does not exceed 600kB.
 Support
 *******
 
-If you need support on the documentation, you can ask a question in the discussion `here <https://github.com/espressif/arduino-esp32/discussions>`_.
+If you need support on the documentation, you can ask a question in the discussion `here <https://github.com/francisduvivier/arduino-esp32-fri3d/discussions>`_.
 
 Additional Guidelines
 ---------------------

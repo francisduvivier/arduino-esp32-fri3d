@@ -21,15 +21,15 @@ Installing using Arduino IDE
 This is the way to install Arduino-ESP32 directly from the Arduino IDE.
 
 .. note::
-   For overview of SoC's support, take a look on `Supported Soc's table <https://docs.espressif.com/projects/arduino-esp32/en/latest/getting_started.html#supported-soc-s>`_ where you can find if the particular chip is under stable or development release.
+   For overview of SoC's support, take a look on `Supported Soc's table <https://docs.espressif.com/projects/arduino-esp32-fri3d/en/latest/getting_started.html#supported-soc-s>`_ where you can find if the particular chip is under stable or development release.
 
 - Stable release link::
 
-   https://espressif.github.io/arduino-esp32/package_esp32_index.json
+   https://francisduvivier.github.io/arduino-esp32-fri3d/package_esp32_index.json
 
 - Development release link::
 
-   https://espressif.github.io/arduino-esp32/package_esp32_dev_index.json
+   https://francisduvivier.github.io/arduino-esp32-fri3d/package_esp32_dev_index.json
 
 
 .. note::
