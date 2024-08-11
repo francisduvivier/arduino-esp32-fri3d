@@ -30,8 +30,8 @@
  **************************************************************************/
 
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_ST7789.h> // Hardware-specific library for ST7789
 #include <SPI.h>
+#include <Fri3dBadge_Adafruit_ST7789.h>
 
 #if defined(ARDUINO_FEATHER_ESP32) // Feather Huzzah32
   #define TFT_CS         14
@@ -56,7 +56,7 @@
 // SCLK = pin 13. This is the fastest mode of operation and is required if
 // using the breakout board's microSD card.
 
-Fri3dBadge_TFT tft = Fri3dBadge_TFT();
+Fri3dBadge_Adafruit_ST7789 tft = Fri3dBadge_Adafruit_ST7789();
 
 // OPTION 2 lets you interface the display using ANY TWO or THREE PINS,
 // tradeoff being that performance is not as fast as hardware SPI above.
