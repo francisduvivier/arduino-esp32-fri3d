@@ -2,11 +2,11 @@
   "packages": [
     {
       "name": "Fri3dBadge",
-      "maintainer": "Espressif Systems",
-      "websiteURL": "https://github.com/francisduvivier/arduino-esp32-fri3d",
-      "email": "hristo@espressif.com",
+      "maintainer": "Fri3d Camp",
+      "websiteURL": "https://github.com/Fri3dCamp/Badge2020_arduino",
+      "email": "info@fri3d.be",
       "help": {
-        "online": "http://esp32.com"
+        "online": "https://fri3d.be/badge"
       },
       "platforms": [
         {
