@@ -33,7 +33,7 @@
 #include <SPI.h>
 #include <Fri3dBadge_Adafruit_ST7789.h>
 
-Fri3dBadge_Adafruit_ST7789 tft = Fri3dBadge_Adafruit_ST7789();
+Fri3dBadge_Adafruit_ST7789 tft = Fri3dBadge_Adafruit_ST7789(); // Modified for Fri3dBadge_Adafruit_ST7789
 
 float p = 3.1415926;
 
@@ -41,12 +41,8 @@ void setup(void) {
   Serial.begin(9600);
   Serial.print(F("Hello! ST77xx TFT Test"));
 
-  tft.init();           // Init ST7789 240x240
+  tft.init(); // Modified for Fri3dBadge_Adafruit_ST7789
 
-  // SPI speed defaults to SPI_DEFAULT_FREQ defined in the library, you can override it here
-  // Note that speed allowable depends on chip and quality of wiring, if you go too fast, you
-  // may end up with a black screen some times, or all the time.
-  //tft.setSPISpeed(40000000);
   Serial.println(F("Initialized"));
 
   uint16_t time = millis();
@@ -58,7 +54,7 @@ void setup(void) {
 
   // large block of text
   tft.fillScreen(ST77XX_BLACK);
-  testdrawtext("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing ante sed nibh tincidunt feugiat. Maecenas enim massa, fringilla sed malesuada et, malesuada sit amet turpis. Sed porttitor neque ut ante pretium vitae malesuada nunc bibendum. Nullam aliquet ultrices massa eu hendrerit. Ut sed nisi lorem. In vestibulum purus a tortor imperdiet posuere. ", ST77XX_WHITE);
+  testdrawtext("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing ante sed nibh tincidunt feugiat. Maecenas enim massa, fringilla sed malesuada et, malesuada sit amet turpis. Sed porttitor neque ut ante pretium vitae malesuada nunc bibendum. Nullam aliquet ultrices massa eu hendrerit. Ut sed nisi lorem. In vestibulum purus a tortor imperdiet posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing ante sed nibh tincidunt feugiat. Maecenas enim massa, fringilla sed malesuada et, malesuada sit amet turpis. Sed porttitor neque ut ante pretium vitae malesuada nunc bibendum. Nullam aliquet ultrices massa eu hendrerit. Ut sed nisi lorem. In vestibulum purus a tortor imperdiet posuere. ", ST77XX_WHITE);
   delay(1000);
 
   // tft print function!
