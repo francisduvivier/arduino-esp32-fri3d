@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export BASE_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork"
+
 if [ ! $GITHUB_EVENT_NAME == "release" ]; then
     echo "Wrong event '$GITHUB_EVENT_NAME'!"
     exit 1
@@ -25,14 +27,14 @@ RELEASE_BRANCH=`echo $EVENT_JSON | jq -r '.release.target_commitish'`
 RELEASE_ID=`echo $EVENT_JSON | jq -r '.release.id'`
 RELEASE_BODY=`echo $EVENT_JSON | jq -r '.release.body'`
 
-OUTPUT_DIR="$GITHUB_WORKSPACE/build"
-PACKAGE_NAME="esp32-$RELEASE_TAG"
-PACKAGE_JSON_MERGE="$GITHUB_WORKSPACE/.github/scripts/merge_packages.py"
-PACKAGE_JSON_TEMPLATE="$GITHUB_WORKSPACE/package/package_fri3d_index.template.json"
+OUTPUT_DIR="$BASE_DIR/build"
+PACKAGE_NAME="esp32-fri3d-$RELEASE_TAG"
+PACKAGE_JSON_MERGE=".github/scripts/merge_packages.py"
+PACKAGE_JSON_TEMPLATE="$BASE_DIR/package/package_fri3d_index.template.json"
 PACKAGE_JSON_DEV="package_fri3d_dev_index.json"
 PACKAGE_JSON_REL="package_fri3d_index.json"
 
-echo "Event: $GITHUB_EVENT_NAME, Repo: $GITHUB_REPOSITORY, Path: $GITHUB_WORKSPACE, Ref: $GITHUB_REF"
+echo "Event: $GITHUB_EVENT_NAME, Repo: $GITHUB_REPOSITORY, Path: $BASE_DIR, Ref: $GITHUB_REF"
 echo "Action: $action, Branch: $RELEASE_BRANCH, ID: $RELEASE_ID"
 echo "Tag: $RELEASE_TAG, Draft: $draft, Pre-Release: $RELEASE_PRE"
 
@@ -80,57 +82,7 @@ function git_safe_upload_asset(){
     return $?
 }
 
-function git_upload_to_pages(){
-    local path=$1
-    local src=$2
 
-    if [ ! -f "$src" ]; then
-        >&2 echo "Input is not a file! Aborting..."
-        return 1
-    fi
-
-    local info=`curl -s -k -H "Authorization: token $GITHUB_TOKEN" -H "Accept: application/vnd.github.v3.object+json" -X GET "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/$path?ref=gh-pages"`
-    local type=`echo "$info" | jq -r '.type'`
-    local message=$(basename $path)
-    local sha=""
-    local content=""
-
-    if [ $type == "file" ]; then
-        sha=`echo "$info" | jq -r '.sha'`
-        sha=",\"sha\":\"$sha\""
-        message="Updating $message"
-    elif [ ! $type == "null" ]; then
-        >&2 echo "Wrong type '$type'"
-        return 1
-    else
-        message="Creating $message"
-    fi
-
-    content=`base64 -i "$src"`
-    data="{\"branch\":\"gh-pages\",\"message\":\"$message\",\"content\":\"$content\"$sha}"
-
-    echo "$data" | curl -s -k -H "Authorization: token $GITHUB_TOKEN" -H "Accept: application/vnd.github.v3.raw+json" -X PUT --data @- "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/$path"
-}
-
-function git_safe_upload_to_pages(){
-    local path=$1
-    local file="$2"
-    local name=$(basename "$file")
-    local size=`get_file_size "$file"`
-    local upload_res=`git_upload_to_pages "$path" "$file"`
-    if [ $? -ne 0 ]; then
-        >&2 echo "ERROR: Failed to upload '$name' ($?)"
-        return 1
-    fi
-    up_size=`echo "$upload_res" | jq -r '.content.size'`
-    if [ $up_size -ne $size ]; then
-        >&2 echo "ERROR: Uploaded size does not match! $up_size != $size"
-        #git_delete_asset
-        return 1
-    fi
-    echo "$upload_res" | jq -r '.content.download_url'
-    return $?
-}
 
 function merge_package_json(){
     local jsonLink=$1
@@ -171,7 +123,7 @@ PKG_DIR="$OUTPUT_DIR/$PACKAGE_NAME"
 PACKAGE_ZIP="$PACKAGE_NAME.zip"
 
 echo "Updating submodules ..."
-git -C "$GITHUB_WORKSPACE" submodule update --init --recursive > /dev/null 2>&1
+git -C "$BASE_DIR" submodule update --init --recursive > /dev/null 2>&1
 
 mkdir -p "$PKG_DIR/tools"
 
@@ -179,34 +131,34 @@ mkdir -p "$PKG_DIR/tools"
 echo "Copying files for packaging ..."
 if [ -z "${BOARDS}" ]; then
     # Copy all variants
-    cp -f  "$GITHUB_WORKSPACE/boards.txt"                   "$PKG_DIR/"
-    cp -Rf "$GITHUB_WORKSPACE/variants"                     "$PKG_DIR/"
+    cp -f  "$BASE_DIR/boards.txt"                   "$PKG_DIR/"
+    cp -Rf "$BASE_DIR/variants"                     "$PKG_DIR/"
 else
     # Remove all entries not starting with any board code or "menu." from boards.txt
-    cat "$GITHUB_WORKSPACE/boards.txt" | grep "^menu\."         >  "$PKG_DIR/boards.txt"
+    cat "$BASE_DIR/boards.txt" | grep "^menu\."         >  "$PKG_DIR/boards.txt"
     for board in ${BOARDS} ; do
-        cat "$GITHUB_WORKSPACE/boards.txt" | grep "^${board}\." >> "$PKG_DIR/boards.txt"
+        cat "$BASE_DIR/boards.txt" | grep "^${board}\." >> "$PKG_DIR/boards.txt"
     done
     # Copy only relevant variant files
     mkdir "$PKG_DIR/variants/"
     for variant in `cat ${PKG_DIR}/boards.txt | grep "\.variant=" | cut -d= -f2` ; do
-        cp -Rf "$GITHUB_WORKSPACE/variants/${variant}"      "$PKG_DIR/variants/"
+        cp -Rf "$BASE_DIR/variants/${variant}"      "$PKG_DIR/variants/"
     done
 fi
-cp -f  "$GITHUB_WORKSPACE/package.json"                     "$PKG_DIR/"
-cp -f  "$GITHUB_WORKSPACE/programmers.txt"                  "$PKG_DIR/"
-cp -Rf "$GITHUB_WORKSPACE/cores"                            "$PKG_DIR/"
-cp -Rf "$GITHUB_WORKSPACE/libraries"                        "$PKG_DIR/"
-cp -f  "$GITHUB_WORKSPACE/tools/espota.exe"                 "$PKG_DIR/tools/"
-cp -f  "$GITHUB_WORKSPACE/tools/espota.py"                  "$PKG_DIR/tools/"
-cp -f  "$GITHUB_WORKSPACE/tools/gen_esp32part.py"           "$PKG_DIR/tools/"
-cp -f  "$GITHUB_WORKSPACE/tools/gen_esp32part.exe"          "$PKG_DIR/tools/"
-cp -f  "$GITHUB_WORKSPACE/tools/gen_insights_package.py"    "$PKG_DIR/tools/"
-cp -f  "$GITHUB_WORKSPACE/tools/gen_insights_package.exe"   "$PKG_DIR/tools/"
-cp -Rf "$GITHUB_WORKSPACE/tools/partitions"                 "$PKG_DIR/tools/"
-cp -Rf "$GITHUB_WORKSPACE/tools/ide-debug"                  "$PKG_DIR/tools/"
-cp -Rf "$GITHUB_WORKSPACE/tools/sdk"                        "$PKG_DIR/tools/"
-cp -f $GITHUB_WORKSPACE/tools/platformio-build*.py          "$PKG_DIR/tools/"
+cp -f  "$BASE_DIR/package.json"                     "$PKG_DIR/"
+cp -f  "$BASE_DIR/programmers.txt"                  "$PKG_DIR/"
+cp -Rf "$BASE_DIR/cores"                            "$PKG_DIR/"
+cp -Rf "$BASE_DIR/libraries"                        "$PKG_DIR/"
+cp -f  "$BASE_DIR/tools/espota.exe"                 "$PKG_DIR/tools/"
+cp -f  "$BASE_DIR/tools/espota.py"                  "$PKG_DIR/tools/"
+cp -f  "$BASE_DIR/tools/gen_esp32part.py"           "$PKG_DIR/tools/"
+cp -f  "$BASE_DIR/tools/gen_esp32part.exe"          "$PKG_DIR/tools/"
+cp -f  "$BASE_DIR/tools/gen_insights_package.py"    "$PKG_DIR/tools/"
+cp -f  "$BASE_DIR/tools/gen_insights_package.exe"   "$PKG_DIR/tools/"
+cp -Rf "$BASE_DIR/tools/partitions"                 "$PKG_DIR/tools/"
+cp -Rf "$BASE_DIR/tools/ide-debug"                  "$PKG_DIR/tools/"
+cp -Rf "$BASE_DIR/tools/sdk"                        "$PKG_DIR/tools/"
+cp -f $BASE_DIR/tools/platformio-build*.py          "$PKG_DIR/tools/"
 
 # Remove unnecessary files in the package folder
 echo "Cleaning up folders ..."
@@ -215,7 +167,7 @@ find "$PKG_DIR" -name '*.git*' -type f -delete
 
 # Replace tools locations in platform.txt
 echo "Generating platform.txt..."
-cat "$GITHUB_WORKSPACE/platform.txt" | \
+cat "$BASE_DIR/platform.txt" | \
 sed "s/version=.*/version=$RELEASE_TAG/g" | \
 sed 's/tools.xtensa-esp32-elf-gcc.path={runtime.platform.path}\/tools\/xtensa-esp32-elf/tools.xtensa-esp32-elf-gcc.path=\{runtime.tools.xtensa-esp32-elf-gcc.path\}/g' | \
 sed 's/tools.xtensa-esp32s2-elf-gcc.path={runtime.platform.path}\/tools\/xtensa-esp32s2-elf/tools.xtensa-esp32s2-elf-gcc.path=\{runtime.tools.xtensa-esp32s2-elf-gcc.path\}/g' | \
@@ -237,9 +189,9 @@ fi
 # Add header with version information
 echo "Generating core_version.h ..."
 ver_define=`echo $RELEASE_TAG | tr "[:lower:].\055" "[:upper:]_"`
-ver_hex=`git -C "$GITHUB_WORKSPACE" rev-parse --short=8 HEAD 2>/dev/null`
+ver_hex=`git -C "$BASE_DIR" rev-parse --short=8 HEAD 2>/dev/null`
 echo \#define ARDUINO_ESP32_GIT_VER 0x$ver_hex > "$PKG_DIR/cores/esp32/core_version.h"
-echo \#define ARDUINO_ESP32_GIT_DESC `git -C "$GITHUB_WORKSPACE" describe --tags 2>/dev/null` >> "$PKG_DIR/cores/esp32/core_version.h"
+echo \#define ARDUINO_ESP32_GIT_DESC `git -C "$BASE_DIR" describe --tags 2>/dev/null` >> "$PKG_DIR/cores/esp32/core_version.h"
 echo \#define ARDUINO_ESP32_RELEASE_$ver_define >> "$PKG_DIR/cores/esp32/core_version.h"
 echo \#define ARDUINO_ESP32_RELEASE \"$ver_define\" >> "$PKG_DIR/cores/esp32/core_version.h"
 
@@ -331,12 +283,10 @@ fi
 # Upload package JSONs
 echo "Uploading $PACKAGE_JSON_DEV ..."
 echo "Download URL: "`git_safe_upload_asset "$OUTPUT_DIR/$PACKAGE_JSON_DEV"`
-echo "Pages URL: "`git_safe_upload_to_pages "$PACKAGE_JSON_DEV" "$OUTPUT_DIR/$PACKAGE_JSON_DEV"`
 echo
 if [ "$RELEASE_PRE" == "false" ]; then
     echo "Uploading $PACKAGE_JSON_REL ..."
     echo "Download URL: "`git_safe_upload_asset "$OUTPUT_DIR/$PACKAGE_JSON_REL"`
-    echo "Pages URL: "`git_safe_upload_to_pages "$PACKAGE_JSON_REL" "$OUTPUT_DIR/$PACKAGE_JSON_REL"`
     echo
 fi
 
@@ -349,7 +299,7 @@ echo "Preparing release notes ..."
 releaseNotes=""
 
 # Process annotated tags
-relNotesRaw=`git -C "$GITHUB_WORKSPACE" show -s --format=%b $RELEASE_TAG`
+relNotesRaw=`git -C "$BASE_DIR" show -s --format=%b $RELEASE_TAG`
 readarray -t msgArray <<<"$relNotesRaw"
 arrLen=${#msgArray[@]}
 if [ $arrLen > 3 ] && [ "${msgArray[0]:0:3}" == "tag" ]; then
@@ -383,13 +333,13 @@ if [ "$RELEASE_PRE" == "false" ]; then
 fi
 if [ ! -z "$COMMITS_SINCE_RELEASE" ] && [ "$COMMITS_SINCE_RELEASE" != "null" ]; then
     echo "Getting commits since $COMMITS_SINCE_RELEASE ..."
-    git -C "$GITHUB_WORKSPACE" log --oneline -n 500 "$COMMITS_SINCE_RELEASE..HEAD" > "$commitFile"
+    git -C "$BASE_DIR" log --oneline -n 500 "$COMMITS_SINCE_RELEASE..HEAD" > "$commitFile"
 elif [ "$RELEASE_BRANCH" != "master" ]; then
     echo "Getting all commits on branch '$RELEASE_BRANCH' ..."
-    git -C "$GITHUB_WORKSPACE" log --oneline -n 500 --cherry-pick --left-only --no-merges HEAD...origin/master > "$commitFile"
+    git -C "$BASE_DIR" log --oneline -n 500 --cherry-pick --left-only --no-merges HEAD...origin/master > "$commitFile"
 else
     echo "Getting all commits on master ..."
-    git -C "$GITHUB_WORKSPACE" log --oneline -n 500 --no-merges > "$commitFile"
+    git -C "$BASE_DIR" log --oneline -n 500 --no-merges > "$commitFile"
 fi
 releaseNotes+=$'\r\n##### Commits\r\n'
 IFS=$'\n'
@@ -427,7 +377,7 @@ echo
 
 # Upload submodules versions
 echo "Generating submodules.txt ..."
-git -C "$GITHUB_WORKSPACE" submodule status > "$OUTPUT_DIR/submodules.txt"
+git -C "$BASE_DIR" submodule status > "$OUTPUT_DIR/submodules.txt"
 echo "Uploading submodules.txt ..."
 echo "Download URL: "`git_safe_upload_asset "$OUTPUT_DIR/submodules.txt"`
 echo ""
