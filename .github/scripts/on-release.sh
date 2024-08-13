@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export BASE_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork"
+export MODS_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork-mods"
 
 if [ ! $GITHUB_EVENT_NAME == "release" ]; then
     echo "Wrong event '$GITHUB_EVENT_NAME'!"
