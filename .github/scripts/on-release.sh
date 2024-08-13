@@ -1,7 +1,25 @@
 #!/bin/bash
+if [ -z "$GITHUB_WORKSPACE" ]; then
+    export GITHUB_WORKSPACE="$PWD"
+    export GITHUB_REPOSITORY="francisduvivier/arduino-esp32-fri3d"
+    export GITHUB_EVENT_NAME="release"
+    export GITHUB_EVENT_PATH="$GITHUB_WORKSPACE/.github/test-release-published-event.json"
+fi
 
-export BASE_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork"
+export BASE_DIR="$GITHUB_WORKSPACE/arduino-esp32"
+export UPSTREAM_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork"
 export MODS_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork-mods"
+
+# Clone updstream code
+echo "Start Cloning espressif/arduino-esp32"
+rsync -av "$UPSTREAM_DIR/" "$BASE_DIR/"
+echo "Done Cloning espressif/arduino-esp32"
+
+# Overwrite the files in BASE_DIR with files MODS_DIR
+echo "Start Copying Fri3d arduino-esp32 mods"
+rsync -av "$MODS_DIR/" "$BASE_DIR/"
+echo "Done Copying Fri3d arduino-esp32 mods"
+
 
 if [[ ! $GITHUB_EVENT_NAME == "release" ]]; then
     echo "Wrong event '$GITHUB_EVENT_NAME'!"
