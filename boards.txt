@@ -145,7 +145,7 @@ fri3d_2024_esp32s3.menu.USBMode.default.build.usb_mode=0
 
 fri3d_2024_esp32s3.menu.CDCOnBoot.default=Enabled
 fri3d_2024_esp32s3.menu.CDCOnBoot.default.build.cdc_on_boot=1
-fri3d_2024_esp32s3.menu.CDCOnBoot.disabled=Enabled
+fri3d_2024_esp32s3.menu.CDCOnBoot.disabled=Disabled
 fri3d_2024_esp32s3.menu.CDCOnBoot.disabled.build.cdc_on_boot=0
 
 fri3d_2024_esp32s3.menu.MSCOnBoot.default=Disabled
