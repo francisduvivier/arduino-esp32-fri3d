@@ -3,21 +3,23 @@
 export BASE_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork"
 export MODS_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork-mods"
 
-if [ ! $GITHUB_EVENT_NAME == "release" ]; then
+if [[ ! $GITHUB_EVENT_NAME == "release" ]]; then
     echo "Wrong event '$GITHUB_EVENT_NAME'!"
     exit 1
 fi
 
+echo "Github event '$GITHUB_EVENT_NAME'!"
+
 EVENT_JSON=`cat $GITHUB_EVENT_PATH`
 
 action=`echo $EVENT_JSON | jq -r '.action'`
-if [ ! $action == "published" ]; then
+if [[ ! $action == "published" ]]; then
     echo "Wrong action '$action'. Exiting now..."
     exit 0
 fi
 
 draft=`echo $EVENT_JSON | jq -r '.release.draft'`
-if [ $draft == "true" ]; then
+if [[ $draft == "true" ]]; then
     echo "It's a draft release. Exiting now..."
     exit 0
 fi
@@ -233,7 +235,7 @@ jq_arg=".packages[0].platforms[0].version = \"$RELEASE_TAG\" | \
 # Generate package JSONs
 echo "Genarating $PACKAGE_JSON_DEV ..."
 cat "$PACKAGE_JSON_TEMPLATE" | jq "$jq_arg" > "$OUTPUT_DIR/$PACKAGE_JSON_DEV"
-if [ "$RELEASE_PRE" == "false" ]; then
+if [[ "$RELEASE_PRE" == "false" ]]; then
     echo "Genarating $PACKAGE_JSON_REL ..."
     cat "$PACKAGE_JSON_TEMPLATE" | jq "$jq_arg" > "$OUTPUT_DIR/$PACKAGE_JSON_REL"
 fi
@@ -249,16 +251,16 @@ prev_any_release=$(echo "$releasesJson" | jq -e -r ". | map(select(.draft == fal
 prev_branch_release=$(echo "$releasesJson" | jq -e -r ". | map(select(.draft == false and .prerelease == false and .target_commitish == \"$RELEASE_BRANCH\")) | sort_by(.published_at | - fromdateiso8601)  | .[0].tag_name")
 prev_branch_any_release=$(echo "$releasesJson" | jq -e -r ". | map(select(.draft == false and .target_commitish == \"$RELEASE_BRANCH\")) | sort_by(.published_at | - fromdateiso8601)  | .[0].tag_name")
 shopt -s nocasematch
-if [ "$prev_release" == "$RELEASE_TAG" ]; then
+if [[ "$prev_release" == "$RELEASE_TAG" ]]; then
     prev_release=$(echo "$releasesJson" | jq -e -r ". | map(select(.draft == false and .prerelease == false)) | sort_by(.published_at | - fromdateiso8601) | .[1].tag_name")
 fi
-if [ "$prev_any_release" == "$RELEASE_TAG" ]; then
+if [[ "$prev_any_release" == "$RELEASE_TAG" ]]; then
     prev_any_release=$(echo "$releasesJson" | jq -e -r ". | map(select(.draft == false)) | sort_by(.published_at | - fromdateiso8601)  | .[1].tag_name")
 fi
-if [ "$prev_branch_release" == "$RELEASE_TAG" ]; then
+if [[ "$prev_branch_release" == "$RELEASE_TAG" ]]; then
     prev_branch_release=$(echo "$releasesJson" | jq -e -r ". | map(select(.draft == false and .prerelease == false and .target_commitish == \"$RELEASE_BRANCH\")) | sort_by(.published_at | - fromdateiso8601)  | .[1].tag_name")
 fi
-if [ "$prev_branch_any_release" == "$RELEASE_TAG" ]; then
+if [[ "$prev_branch_any_release" == "$RELEASE_TAG" ]]; then
     prev_branch_any_release=$(echo "$releasesJson" | jq -e -r ". | map(select(.draft == false and .target_commitish == \"$RELEASE_BRANCH\")) | sort_by(.published_at | - fromdateiso8601)  | .[1].tag_name")
 fi
 shopt -u nocasematch
@@ -269,13 +271,13 @@ echo "Previous (any)release: $prev_any_release"
 echo
 
 # Merge package JSONs with previous releases
-if [ ! -z "$prev_any_release" ] && [ "$prev_any_release" != "null" ]; then
+if [ ! -z "$prev_any_release" ] && [[ "$prev_any_release" != "null" ]]; then
     echo "Merging with JSON from $prev_any_release ..."
     merge_package_json "$prev_any_release/$PACKAGE_JSON_DEV" "$OUTPUT_DIR/$PACKAGE_JSON_DEV"
 fi
 
 if [ "$RELEASE_PRE" == "false" ]; then
-    if [ ! -z "$prev_release" ] && [ "$prev_release" != "null" ]; then
+    if [ ! -z "$prev_release" ] && [[ "$prev_release" != "null" ]]; then
         echo "Merging with JSON from $prev_release ..."
         merge_package_json "$prev_release/$PACKAGE_JSON_REL" "$OUTPUT_DIR/$PACKAGE_JSON_REL"
     fi
@@ -312,8 +314,8 @@ if [ $arrLen > 3 ] && [ "${msgArray[0]:0:3}" == "tag" ]; then
         else
             oneLine="$(echo -e "${msgArray[ind]}" | sed -e 's/^[[:space:]]*//')"
             if [ ${#oneLine} -gt 0 ]; then
-                if [ "${oneLine:0:2}" == "* " ]; then oneLine=$(echo ${oneLine/\*/-}); fi
-                if [ "${oneLine:0:2}" != "- " ]; then releaseNotes+="- "; fi
+                if [[ "${oneLine:0:2}" == "* " ]]; then oneLine=$(echo ${oneLine/\*/-}); fi
+                if [[ "${oneLine:0:2}" != "- " ]]; then releaseNotes+="- "; fi
                 releaseNotes+="$oneLine"
                 releaseNotes+=$'\r\n'
             fi
@@ -329,13 +331,13 @@ echo "Previous Branch (any)release: $prev_branch_any_release"
 echo
 commitFile="$OUTPUT_DIR/commits.txt"
 COMMITS_SINCE_RELEASE="$prev_branch_any_release"
-if [ "$RELEASE_PRE" == "false" ]; then
+if [[ "$RELEASE_PRE" == "false" ]]; then
     COMMITS_SINCE_RELEASE="$prev_branch_release"
 fi
-if [ ! -z "$COMMITS_SINCE_RELEASE" ] && [ "$COMMITS_SINCE_RELEASE" != "null" ]; then
+if [ ! -z "$COMMITS_SINCE_RELEASE" ] && [[ "$COMMITS_SINCE_RELEASE" != "null" ]]; then
     echo "Getting commits since $COMMITS_SINCE_RELEASE ..."
     git -C "$BASE_DIR" log --oneline -n 500 "$COMMITS_SINCE_RELEASE..HEAD" > "$commitFile"
-elif [ "$RELEASE_BRANCH" != "master" ]; then
+elif [[ "$RELEASE_BRANCH" != "master" ]]; then
     echo "Getting all commits on branch '$RELEASE_BRANCH' ..."
     git -C "$BASE_DIR" log --oneline -n 500 --cherry-pick --left-only --no-merges HEAD...origin/master > "$commitFile"
 else
@@ -354,7 +356,7 @@ done
 rm -f $commitFile
 
 # Prepend the original release body
-if [ "${RELEASE_BODY: -1}" == $'\r' ]; then
+if [[ "${RELEASE_BODY: -1}" == $'\r' ]]; then
     RELEASE_BODY="${RELEASE_BODY:0:-1}"
 else
     RELEASE_BODY="$RELEASE_BODY"
