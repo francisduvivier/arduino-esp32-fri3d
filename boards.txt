@@ -89,15 +89,16 @@ fri3d_2024_esp32s3.menu.JTAGAdapter.bridge=ESP USB Bridge
 fri3d_2024_esp32s3.menu.JTAGAdapter.bridge.build.openocdscript=esp32s3-bridge.cfg
 fri3d_2024_esp32s3.menu.JTAGAdapter.bridge.build.copy_jtag_files=1
 
+fri3d_2024_esp32s3.menu.PSRAM.default=OPI PSRAM
+fri3d_2024_esp32s3.menu.PSRAM.default.build.defines=-DBOARD_HAS_PSRAM
+fri3d_2024_esp32s3.menu.PSRAM.default.build.psram_type=opi
 fri3d_2024_esp32s3.menu.PSRAM.disabled=Disabled
 fri3d_2024_esp32s3.menu.PSRAM.disabled.build.defines=
 fri3d_2024_esp32s3.menu.PSRAM.disabled.build.psram_type=qspi
 fri3d_2024_esp32s3.menu.PSRAM.enabled=QSPI PSRAM
 fri3d_2024_esp32s3.menu.PSRAM.enabled.build.defines=-DBOARD_HAS_PSRAM
 fri3d_2024_esp32s3.menu.PSRAM.enabled.build.psram_type=qspi
-fri3d_2024_esp32s3.menu.PSRAM.default=OPI PSRAM
-fri3d_2024_esp32s3.menu.PSRAM.default.build.defines=-DBOARD_HAS_PSRAM
-fri3d_2024_esp32s3.menu.PSRAM.default.build.psram_type=opi
+
 
 fri3d_2024_esp32s3.menu.FlashMode.qio=QIO 80MHz
 fri3d_2024_esp32s3.menu.FlashMode.qio.build.flash_mode=dio
@@ -120,13 +121,14 @@ fri3d_2024_esp32s3.menu.FlashMode.opi.build.boot=opi
 fri3d_2024_esp32s3.menu.FlashMode.opi.build.boot_freq=80m
 fri3d_2024_esp32s3.menu.FlashMode.opi.build.flash_freq=80m
 
+fri3d_2024_esp32s3.menu.FlashSize.default=16MB (128Mb)
+fri3d_2024_esp32s3.menu.FlashSize.default.build.flash_size=16MB
 fri3d_2024_esp32s3.menu.FlashSize.4M=4MB (32Mb)
 fri3d_2024_esp32s3.menu.FlashSize.4M.build.flash_size=4MB
 fri3d_2024_esp32s3.menu.FlashSize.8M=8MB (64Mb)
 fri3d_2024_esp32s3.menu.FlashSize.8M.build.flash_size=8MB
 fri3d_2024_esp32s3.menu.FlashSize.8M.build.partitions=default_8MB
-fri3d_2024_esp32s3.menu.FlashSize.default=16MB (128Mb)
-fri3d_2024_esp32s3.menu.FlashSize.default.build.flash_size=16MB
+
 
 fri3d_2024_esp32s3.menu.LoopCore.1=Core 1
 fri3d_2024_esp32s3.menu.LoopCore.1.build.loop_core=-DARDUINO_RUNNING_CORE=1
@@ -201,12 +203,6 @@ fri3d_2024_esp32s3.menu.PartitionScheme.app3M_fat9M_16MB.upload.maximum_size=314
 fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker=RainMaker
 fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker.build.partitions=rainmaker
 fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker.upload.maximum_size=3145728
-fri3d_2024_esp32s3.menu.PartitionScheme.app5M_fat24M_32MB=32M Flash (4.8MB APP/22MB FATFS)
-fri3d_2024_esp32s3.menu.PartitionScheme.app5M_fat24M_32MB.build.partitions=large_fat_32MB
-fri3d_2024_esp32s3.menu.PartitionScheme.app5M_fat24M_32MB.upload.maximum_size=4718592
-fri3d_2024_esp32s3.menu.PartitionScheme.app5M_little24M_32MB=32M Flash (4.8MB APP/22MB LittleFS)
-fri3d_2024_esp32s3.menu.PartitionScheme.app5M_little24M_32MB.build.partitions=large_littlefs_32MB
-fri3d_2024_esp32s3.menu.PartitionScheme.app5M_little24M_32MB.upload.maximum_size=4718592
 
 fri3d_2024_esp32s3.menu.CPUFreq.240=240MHz (WiFi)
 fri3d_2024_esp32s3.menu.CPUFreq.240.build.f_cpu=240000000L
