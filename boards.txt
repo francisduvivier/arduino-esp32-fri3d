@@ -57,7 +57,7 @@ fri3d_2024_esp32s3.build.target=esp32s3
 fri3d_2024_esp32s3.build.mcu=esp32s3
 fri3d_2024_esp32s3.build.core=esp32
 fri3d_2024_esp32s3.build.variant=fri3d_2024_esp32s3
-fri3d_2024_esp32s3.build.board=FRI3D-BADGE-2024_ESP32S3-WROOM-1
+fri3d_2024_esp32s3.build.board=FRI3D_2024_ESP32S3
 
 fri3d_2024_esp32s3.build.usb_mode=1
 fri3d_2024_esp32s3.build.cdc_on_boot=0
