@@ -6,20 +6,25 @@ if [ -z "$GITHUB_WORKSPACE" ]; then
     export GITHUB_EVENT_PATH="$GITHUB_WORKSPACE/.github/test-release-published-event.json"
 fi
 
-export UPSTREAM_DIR="$GITHUB_WORKSPACE/arduino-esp32"
-export BASE_DIR="$UPSTREAM_DIR"
 export MODS_DIR="$GITHUB_WORKSPACE/arduino-esp32-mods"
 
 # Clone espressif/arduino-esp32 repo tag 2.0.14 as submodule
-echo "Updating submodules ..."
-git -C "$BASE_DIR" submodule update --init --recursive > /dev/null 2>&1
+UPSTREAM_VERSION=2.0.14
+echo "###### Start Downloading arduino-esp32-$UPSTREAM_VERSION.zip from https://github.com/espressif/arduino-esp32/archive/refs/tags/$UPSTREAM_VERSION.tar.gz"
+wget -O "arduino-esp32-$UPSTREAM_VERSION.zip" "https://github.com/espressif/arduino-esp32/archive/refs/tags/$UPSTREAM_VERSION.tar.gz"
+echo "###### extracting arduino-esp32-$UPSTREAM_VERSION.zip"
+tar -xzf arduino-esp32-$UPSTREAM_VERSION.zip
+export UPSTREAM_DIR="$GITHUB_WORKSPACE/arduino-esp32-$UPSTREAM_VERSION"
+echo "###### Done Downloading arduino-esp32-$UPSTREAM_VERSION.zip from https://github.com/espressif/arduino-esp32/archive/refs/tags/$UPSTREAM_VERSION.tar.gz"
+
+export BASE_DIR="$UPSTREAM_DIR"
 
 
 
 # Overwrite the files in BASE_DIR with files MODS_DIR
-echo "Start Copying Fri3d arduino-esp32 mods"
-rsync -av "$MODS_DIR/" "$BASE_DIR/"
-echo "Done Copying Fri3d arduino-esp32 mods"
+echo "###### Start Copying Fri3d arduino-esp32 mods"
+rsync -a --progress "$MODS_DIR/" "$BASE_DIR/"
+echo "###### Done Copying Fri3d arduino-esp32 mods"
 
 
 if [[ ! $GITHUB_EVENT_NAME == "release" ]]; then
@@ -27,7 +32,7 @@ if [[ ! $GITHUB_EVENT_NAME == "release" ]]; then
     exit 1
 fi
 
-echo "Github event '$GITHUB_EVENT_NAME'!"
+echo "###### Github event '$GITHUB_EVENT_NAME'!"
 
 EVENT_JSON=`cat $GITHUB_EVENT_PATH`
 
