@@ -8,7 +8,7 @@ fi
 
 export UPSTREAM_DIR="$GITHUB_WORKSPACE/arduino-esp32"
 export BASE_DIR="$UPSTREAM_DIR"
-export MODS_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork-mods"
+export MODS_DIR="$GITHUB_WORKSPACE/arduino-esp32-mods"
 
 # Clone espressif/arduino-esp32 repo tag 2.0.14 as submodule
 echo "Updating submodules ..."
