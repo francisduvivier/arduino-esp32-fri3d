@@ -6,14 +6,15 @@ if [ -z "$GITHUB_WORKSPACE" ]; then
     export GITHUB_EVENT_PATH="$GITHUB_WORKSPACE/.github/test-release-published-event.json"
 fi
 
-export BASE_DIR="$GITHUB_WORKSPACE/arduino-esp32"
-export UPSTREAM_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork"
+export UPSTREAM_DIR="$GITHUB_WORKSPACE/arduino-esp32"
+export BASE_DIR="$UPSTREAM_DIR"
 export MODS_DIR="$GITHUB_WORKSPACE/arduino-esp32-fork-mods"
 
-# Clone updstream code
-echo "Start Cloning espressif/arduino-esp32"
-rsync -av "$UPSTREAM_DIR/" "$BASE_DIR/"
-echo "Done Cloning espressif/arduino-esp32"
+# Clone espressif/arduino-esp32 repo tag 2.0.14 as submodule
+echo "Updating submodules ..."
+git -C "$BASE_DIR" submodule update --init --recursive > /dev/null 2>&1
+
+
 
 # Overwrite the files in BASE_DIR with files MODS_DIR
 echo "Start Copying Fri3d arduino-esp32 mods"
@@ -142,9 +143,6 @@ set -e
 mkdir -p "$OUTPUT_DIR"
 PKG_DIR="$OUTPUT_DIR/$PACKAGE_NAME"
 PACKAGE_ZIP="$PACKAGE_NAME.zip"
-
-echo "Updating submodules ..."
-git -C "$BASE_DIR" submodule update --init --recursive > /dev/null 2>&1
 
 mkdir -p "$PKG_DIR/tools"
 
