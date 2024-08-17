@@ -3,8 +3,8 @@
     {
       "name": "esp32-marauder",
       "maintainer": "Francis Duvivier",
-      "websiteURL": "https://github.com/espressif/arduino-esp32",
-      "email": "hristo@espressif.com",
+      "websiteURL": "https://francisduvivier.github.io/arduino-esp32-fri3d",
+      "email": "francisduvivier@gmail.com",
       "help": {
         "online": "http://esp32.com"
       },
