@@ -91,9 +91,6 @@ esp32s3.menu.JTAGAdapter.bridge.build.copy_jtag_files=1
 esp32s3.menu.PSRAM.disabled=Disabled
 esp32s3.menu.PSRAM.disabled.build.defines=
 esp32s3.menu.PSRAM.disabled.build.psram_type=qspi
-esp32s3.menu.PSRAM.enabled=QSPI PSRAM
-esp32s3.menu.PSRAM.enabled.build.defines=-DBOARD_HAS_PSRAM
-esp32s3.menu.PSRAM.enabled.build.psram_type=qspi
 esp32s3.menu.PSRAM.opi=OPI PSRAM
 esp32s3.menu.PSRAM.opi.build.defines=-DBOARD_HAS_PSRAM
 esp32s3.menu.PSRAM.opi.build.psram_type=opi
@@ -469,8 +466,6 @@ esp32s2.menu.UploadMode.cdc.upload.wait_for_upload_port=true
 
 esp32s2.menu.PSRAM.disabled=Disabled
 esp32s2.menu.PSRAM.disabled.build.defines=
-esp32s2.menu.PSRAM.enabled=Enabled
-esp32s2.menu.PSRAM.enabled.build.defines=-DBOARD_HAS_PSRAM
 
 esp32s2.menu.PartitionScheme.default=Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)
 esp32s2.menu.PartitionScheme.default.build.partitions=default
@@ -625,9 +620,6 @@ esp32.menu.JTAGAdapter.bridge.build.copy_jtag_files=1
 esp32.menu.PSRAM.disabled=Disabled
 esp32.menu.PSRAM.disabled.build.defines=
 esp32.menu.PSRAM.disabled.build.extra_libs=
-esp32.menu.PSRAM.enabled=Enabled
-esp32.menu.PSRAM.enabled.build.defines=-DBOARD_HAS_PSRAM -mfix-esp32-psram-cache-issue -mfix-esp32-psram-cache-strategy=memw
-esp32.menu.PSRAM.enabled.build.extra_libs=
 
 esp32.menu.PartitionScheme.default=Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)
 esp32.menu.PartitionScheme.default.build.partitions=default
