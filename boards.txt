@@ -781,7 +781,7 @@ fri3d_2024_esp32s3.menu.EraseFlash.all.upload.erase_cmd=-e
 
 ##############################################################
 #### LILYGO T8 ESP32S2 with SD card ####
-lilygo_t8_esp32s2.name=ESP32S2 Dev Module
+lilygo_t8_esp32s2.name=LILYGO T8 ESP32S2 with SD
 lilygo_t8_esp32s2.vid.0=0x303a
 lilygo_t8_esp32s2.pid.0=0x0002
 
