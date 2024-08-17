@@ -954,15 +954,7 @@ fri3d_2024_esp32s3.menu.PartitionScheme.fatflash.upload.maximum_size=2097152
 fri3d_2024_esp32s3.menu.PartitionScheme.app3M_fat9M_16MB=16M Flash (3MB APP/9.9MB FATFS)
 fri3d_2024_esp32s3.menu.PartitionScheme.app3M_fat9M_16MB.build.partitions=app3M_fat9M_16MB
 fri3d_2024_esp32s3.menu.PartitionScheme.app3M_fat9M_16MB.upload.maximum_size=3145728
-fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker=RainMaker
-fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker.build.partitions=rainmaker
-fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker.upload.maximum_size=1966080
-fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker_4MB=RainMaker 4MB No OTA
-fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker_4MB.build.partitions=rainmaker_4MB_no_ota
-fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker_4MB.upload.maximum_size=4038656
-fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker_8MB=RainMaker 8MB
-fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker_8MB.build.partitions=rainmaker_8MB
-fri3d_2024_esp32s3.menu.PartitionScheme.rainmaker_8MB.upload.maximum_size=4116480
+
 
 fri3d_2024_esp32s3.menu.CPUFreq.240=240MHz (WiFi)
 fri3d_2024_esp32s3.menu.CPUFreq.240.build.f_cpu=240000000L
